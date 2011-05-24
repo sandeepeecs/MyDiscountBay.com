@@ -85,6 +85,20 @@ class Bookprices extends Controller {
                 $tradus=$this->getprices->tradus($isbn);
 		echo "Rs ".$tradus;
 	}
+	
+	function syr()
+	{
+		$isbn = $this->input->post('isbn');
+                $tradus=$this->getprices->syr($isbn);
+		echo "Rs ".$tradus;
+	}
+	
+	function bookadda()
+	{
+		$isbn = $this->input->post('isbn');
+                $tradus=$this->getprices->bookadda($isbn);
+		echo "Rs ".$tradus;
+	}
         
 	
 	

@@ -255,10 +255,11 @@ class Welcome extends Controller {
 	}
 	
 	
-	function indiaplaza($isbn13)
+	function syr($isbn13)
 	{
 		
-		$flipkart=$this->getprices->indiaplaza($isbn13);
+		$flipkart=$this->getprices->bookadda($isbn13);
+		echo "<br> new";
 		echo $flipkart;
 		echo "<br>";
 	}

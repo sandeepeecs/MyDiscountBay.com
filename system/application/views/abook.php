@@ -60,6 +60,16 @@
      $("td#pricetr").html(data);
    });
   
+   $.post("<?php echo  site_url("bookprices/syr");?>", { isbn: "<?php echo $isbn ?>" },
+   function(data){
+     $("td#pricesyr").html(data);
+   });
+   
+    $.post("<?php echo  site_url("bookprices/bookadda");?>", { isbn: "<?php echo $isbn ?>" },
+   function(data){
+     $("td#pricebookadda").html(data);
+   });
+  
   
   $(document).ajaxStop(function() {
   $("#hor-minimalist-b").tablesorter(); 
@@ -198,6 +208,20 @@ document.searchform.s.value ="";
 						<td>Yes</td>
 						<td>No</td>
 						</tr>
+						<tr>
+						<td><a href="http://www.stackyourrack.com/search-query=<?php echo $isbn ?>?filters=tid:357" target="_blank" >StackYourRack</a></td>	
+						<td id="pricesyr">Loading...</td>
+						<td>Yes</td>
+						<td>No</td>
+						</tr>
+						<tr>
+						<td><a href="http://www.bookadda.com/search/<?php echo $isbn ?>?filters=tid:357" target="_blank" >bookadda</a></td>	
+						<td id="pricebookadda">Loading...</td>
+						<td>Yes</td>
+						<td>No</td>
+						</tr>
+						
+						
 						
 						</tbody>
 					</table>

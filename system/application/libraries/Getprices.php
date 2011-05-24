@@ -298,6 +298,66 @@ class Getprices {
           }
           return 'N/A';
     }
-
+    
+    function syr($isbn)
+    {
+        
+        $url = 'http://www.stackyourrack.com/search-query='.$isbn;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt( $ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; rv:1.7.3) Gecko/20041001 Firefox/0.10.1" );
+        curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        
+        $body = curl_exec($ch);
+        $retcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        
+        //print_r($body);
+        $body = str_get_html($body);
+        if (isset($body->find('span[class="price_discount_srch"]', 0)->plaintext)) {
+            $price=$body->find('span[class="price_discount_srch"]', 0)->plaintext;
+            
+          //print_r($price);
+         
+        $fprice = trim(str_replace("Rs.", "",$price));
+        return $fprice;
+            
+        }
+        else
+        return "N/A";
+    }
+    
+    
+    
+    function bookadda($isbn)
+    {
+        
+        $url = 'http://www.bookadda.com/search/'.$isbn;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt( $ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; rv:1.7.3) Gecko/20041001 Firefox/0.10.1" );
+        curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        
+        $body = curl_exec($ch);
+        $retcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        
+        //print_r($body);
+        $body = str_get_html($body);
+        if (isset($body->find('span[class="boldtext ourpriceredtext"]', 0)->plaintext)) {
+            $price=$body->find('span[class="boldtext ourpriceredtext"]', 0)->plaintext;
+            
+          //print_r($price);
+         
+        $fprice = trim(str_replace("Rs.", "",$price));
+        return $fprice;
+            
+        }
+        else
+        return "N/A";
+    }
+    
 
 }
