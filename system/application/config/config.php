@@ -11,9 +11,9 @@
 |	http://example.com/
 |
 */
-//$config['base_url']	= "http://localhost/search";
+$config['base_url']	= "http://localhost/mdb";
 
-$config['base_url']	= "http://www.mydiscountbay.com/";
+//$config['base_url']	= "http://www.mydiscountbay.com/";
 
 /*
 |--------------------------------------------------------------------------
