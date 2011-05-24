@@ -155,16 +155,19 @@ class Flipkart{
         curl_close($ch);
         
         
-        //$reurl = substr($body,strpos($body,"http://"));
-       // $body = file_get_html($reurl);
+        $reurl = substr($body,strpos($body,"http://"));
+       
        
         //$body = file_get_html($url);
-        
+        //print_r($reurl);
+         $body = file_get_html($reurl);
         //print_r($body);
-        $body = str_get_html($body);
+        //$body = str_get_html($body);
+
+
 
         $fkauthor =" ";
-        
+        /*
         foreach($body->find('div[class="search_result_list"]') as $article) {
           $item['title']     = $article->find('div[class="unit size4of5 lastUnit right"]', 0)->find('a',0)->plaintext;
           $item['author']    = $article->find('span[class="head-tail"]', 0)->find('a',0)->plaintext;
@@ -176,31 +179,31 @@ class Flipkart{
           //print_r($articles);
         
         
-        /*
-        foreach($body->find('span[class="line search_result_title"]') as $e){
+        
+        foreach($body->find('div[class="line search_result_title"]') as $e){
         $fkurl =  strip_tags($e);}
+        */
+        //print_r($fkurl);
         
-        print_r($fkurl);
-        
-        foreach($body->find('span[class="search_results_list_price"]') as $e){
+        foreach($body->find('span[class="price our fksk-our"]') as $e){
         $fkprice =  strip_tags($e);}
         
-        foreach($body->find('span[class="primary-info"]') as $e)
+        foreach($body->find('div[class="primary-info"]') as $e)
         $fkauthor = strip_tags($e).", ". $fkauthor  ;
                 
-        foreach($body->find('span[class="mprod-summary-title fksk-mprod-summary-title"]') as $e){
+        foreach($body->find('div[class="mprod-summary-title fksk-mprod-summary-title"]') as $e){
         $fktitle =  strip_tags($e);}
         //$fktitle = strip_tags($body->find('span[class="item_summary_title_title"]'));
         
         
         $fkdata =  array(
-                        'title' => $article[0]['title'],
-                        'author'=> $article[0]['author'],
-                        'price' => trim(str_replace("Rs.", "",$article[0]['price']))
+                        'title' => $fktitle,
+                        'author'=> $fkauthor,
+                        'price' => trim(str_replace("Rs.", "",$fkprice))
                     );
-        print_r($fkdata); */
+        //print_r($fkdata); 
         
-        return $item;
+        return $fkdata;
                            
         }
         else{
