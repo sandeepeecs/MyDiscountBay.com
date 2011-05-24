@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb>
+    <bookdetails>
+        <title>2 States: The Story Of My Marriage</title>
+        <author>Chetan Bhagat</author>
+        <img>http://img.fkcdn.com/img/300/9788129115300.jpg</img>
+    </bookdetails>
+    <bookprices>
+		<numberofprices>3</numberofprices>
+		<bookstore>
+			<bsname>flipkart</bsname>
+			<price>Rs. 57</price>
+		</bookstore>
+		<bookstore>
+			<bsname>infibeam</bsname>
+			<price>Rs. 57</price>
+		</bookstore>
+		<bookstore>
+			<bsname>landmark</bsname>
+			<price>Rs. 58</price>
+		</bookstore>
+    </bookprices>
+</mdb>
