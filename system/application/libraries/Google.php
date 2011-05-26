@@ -16,7 +16,7 @@ class Google {
     // The request also includes the userip parameter which provides the end
     // user's IP address. Doing so will help distinguish this legitimate
     // server-side traffic from traffic which doesn't come from an end-user.
-    $url = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&". "q=".$title."&key=ABQIAAAALUaFzzv3t014-DQYFa3LLRTSvysYC7I9rNrj0KMl--dyqp8p3BSpFyFz1MZoEWLHAYaSro1d8KBuVw&userip=USERS-IP-ADDRESS";
+    $url = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&". "q=".$title."&key=ABQIAAAAALUaFzzv3t014-DQYFa3LLRTSvysYC7I9rNrj0KMl--dyqp8p3BSpFyFz1MZoEWLHAYaSro1d8KBuVw&userip=USERS-IP-ADDRESS";
 
     // sendRequest
     // note how referer is set manually
