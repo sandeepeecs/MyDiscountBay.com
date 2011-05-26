@@ -19,7 +19,7 @@ class Goodread{
 			$isbn=$isbn;
 			elseif($this->CI->isbn->gettype($isbn)==13)
 			$isbn = $this->CI->isbn->isbn13to10($isbn);
-            $url = "http://www.goodreads.com/book/isbn?isbn=".$isbn."&key=FKPRByOkrI94KBiIjKtsQ";
+            $url = "http://www.goodreads.com/book/isbn?isbn=".$isbn."&key=FKPRByOOOOkrI94KBiIjKtsQ";
             $session = curl_init($url);
             curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
             $xml_response = curl_exec($session);
