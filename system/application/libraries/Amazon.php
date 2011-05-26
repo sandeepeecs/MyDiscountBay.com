@@ -3,10 +3,10 @@
  class Amazon
     {
 	/*** Your Amazon Access Key Id         * @access private         * @var string      */
-        private $public_key     = "AKIAJZZZTS55H6BLB4JQ";
+        private $public_key     = "AKIAJZZASDEZTS55H6BLB4JQ";
         
         /** * Your Amazon Secret Access Key * @access private  * @var string        */
-        private $private_key    = "fP+f1lczhWL5wxkB0Obg25Eaho4K1NIMw/kChux1";
+        private $private_key    = "fP+f1lczhWLdfgfdg5wxkB0Obg25Eaho4K1NIMw/kChux1";
         
         /** * Constants for product types   * @access public     * @var string     */
         /* Only three categories are listed here.  More categories can be found here:
